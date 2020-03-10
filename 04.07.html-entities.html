@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello JSX React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      const RAQUO = " \u00bb";
+      ReactDOM.render(
+        <div>
+          <h2>
+            詳しくはこちら &raquo;
+          </h2>
+          <h2>
+            {"詳しくはこちら &raquo;"}
+          </h2>
+          <h2>
+            {"詳しくはこちら \u00bb"}
+          </h2>
+          <h2>
+            {"詳しくはこちら" + RAQUO}
+          </h2>
+          <h2>
+            {"詳しくはこちら "}{RAQUO}
+          </h2>
+
+        </div>,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

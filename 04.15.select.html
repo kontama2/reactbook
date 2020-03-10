@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello JSX React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script src="babel/browser.js"></script>
+    <script type="text/babel">
+      var MySelect = React.createClass({
+        getInitialState: function() {
+          return {value: 'move'};
+        },
+        _onChange: function(event) {
+          this.setState({value: event.target.value})
+        },
+        render: function() {
+          return (
+            <select value={this.state.value} onChange={this._onChange}>
+              <option value="stay">とどまるべきか</option>
+              <option value="move">去るべきか</option>
+              <option value="trouble">とどまれば災いあり</option>
+            </select>
+          )
+        }
+      })
+      ReactDOM.render(
+        <MySelect/>,
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>
