@@ -1,6 +1,18 @@
 'use strict';
 'use script';
 
+var _FormInput = require('./components/FormInput');
+
+var _FormInput2 = _interopRequireDefault(_FormInput);
+
+var _Rating = require('./components/Rating');
+
+var _Rating2 = _interopRequireDefault(_Rating);
+
+var _Suggest = require('./components/Suggest');
+
+var _Suggest2 = _interopRequireDefault(_Suggest);
+
 var _Button = require('./components/Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -72,6 +84,145 @@ _reactDom2.default.render(_react2.default.createElement(
       _Button2.default,
       { className: 'custom' },
       '\u4F55\u3082\u3057\u307E\u305B\u3093'
+    )
+  ),
+  _react2.default.createElement(
+    'h2',
+    null,
+    'Suggest'
+  ),
+  _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_Suggest2.default, { options: ['eenie', 'meenie', 'miney', 'mo'] }),
+    _react2.default.createElement(
+      'h2',
+      null,
+      'Rating'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '\u521D\u671F\u5024\u306A\u3057: ',
+      _react2.default.createElement(_Rating2.default, null)
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '\u521D\u671F\u50244: ',
+      _react2.default.createElement(_Rating2.default, { defaultValue: 4 })
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '\u6700\u5927\u5024: ',
+      _react2.default.createElement(_Rating2.default, { max: 11 })
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '\u8AAD\u307F\u53D6\u308A\u5C02\u7528: ',
+      _react2.default.createElement(_Rating2.default, { readonly: true, defaultValue: 3 })
+    )
+  ),
+  _react2.default.createElement(
+    'h2',
+    null,
+    'FormInput'
+  ),
+  _react2.default.createElement(
+    'table',
+    null,
+    _react2.default.createElement(
+      'tbody',
+      null,
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u5358\u7D14\u306A\u5165\u529B\u30D5\u30A3\u30FC\u30EB\u30C9'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, null)
+        )
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u30C7\u30D5\u30A9\u30EB\u30C8\u5024'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, { defaultValue: '\u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u3059' })
+        )
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u5E74\u306E\u5165\u529B'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, { type: 'year' })
+        )
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u8A55\u4FA1'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, { type: 'rating', defaultValue: 4 })
+        )
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u5165\u529B\u60C5\u5831\u306E\u63D0\u793A'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, {
+            type: 'suggest',
+            options: ['red', 'green', 'blue'],
+            defaultValue: 'green' })
+        )
+      ),
+      _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          '\u5358\u7D14\u306A\u30C6\u30AD\u30B9\u30C8\u30A8\u30EA\u30A2'
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(_FormInput2.default, { type: 'text' })
+        )
+      )
     )
   )
 ), document.getElementById('pad'));
