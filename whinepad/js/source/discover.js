@@ -1,5 +1,6 @@
 'use script'
 
+import Form from './components/Form';
 import FormInput from './components/FormInput';
 import Rating from './components/Rating';
 import Suggest from './components/Suggest';
@@ -9,15 +10,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <div style={ {padding: '20px'} }>
+  <div style={{ padding: '20px' }}>
     <h1>コンポーネント一覧</h1>
 
     <h2>Logo</h2>
-    <div style={ {display: 'inline-block', background: 'purple'} }>
+    <div style={{ display: 'inline-block', background: 'purple' }}>
       <Logo />
     </div>
     <h2>Button</h2>
-    <div>onClick が指定された Button: <Button onClick={() => alert('クリックされました') }>クリック</Button>
+    <div>onClick が指定された Button: <Button onClick={() => alert('クリックされました')}>クリック</Button>
     </div>
     <div>href が指定された Button: <Button href="http://reactjs.com">フォローする</Button></div>
     <div>クラス名が指定された Button: <Button className="custom">何もしません</Button></div>
@@ -63,6 +64,14 @@ ReactDOM.render(
         </tr>
       </tbody>
     </table>
+    <h2>Form</h2>
+    <div><Form
+      fields={[
+        { label: '評価', type: 'rating', id: 'rateme' },
+        { label: 'あいさつ', id: 'freetext' },
+      ]}
+      initialData={{ rateme: 4, freetext: 'こんにちは' }} />
+    </div>
   </div>,
   document.getElementById('pad')
 )
