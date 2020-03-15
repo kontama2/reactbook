@@ -1,5 +1,6 @@
 'use script'
 
+import Dialog from './components/Dialog';
 import Actions from './components/Actions';
 import Form from './components/Form';
 import FormInput from './components/FormInput';
@@ -75,6 +76,22 @@ ReactDOM.render(
     </div>
     <h2>操作</h2>
     <div><Actions onAction={type => alert(type)} /></div>
+    <h2>Dialog</h2>
+    <div>
+      <Dialog
+        header="単純な例"
+        onAction={type => alert(type)}>
+        こんにちは！
+      </Dialog>
+      <Dialog
+        header="キャンセルボタンなし、カスタムのボタン"
+        hasCancel={false}
+        confirmLabel="ラベル"
+        onAction={type => alert(type)}>
+        何でも表示できます。例えば、
+        <Button>ボタン</Button>
+      </Dialog>
+    </div>
   </div>,
   document.getElementById('pad')
 )
