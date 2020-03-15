@@ -1,5 +1,6 @@
 'use script'
 
+import Actions from './components/Actions';
 import Form from './components/Form';
 import FormInput from './components/FormInput';
 import Rating from './components/Rating';
@@ -72,6 +73,8 @@ ReactDOM.render(
       ]}
       initialData={{ rateme: 4, freetext: 'こんにちは' }} />
     </div>
+    <h2>操作</h2>
+    <div><Actions onAction={type => alert(type)} /></div>
   </div>,
   document.getElementById('pad')
 )
