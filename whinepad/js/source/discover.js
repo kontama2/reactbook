@@ -74,7 +74,7 @@ ReactDOM.render(
       ]}
       initialData={{ rateme: 4, freetext: 'こんにちは' }} />
     </div>
-    <h2>操作</h2>
+    <h2>Actions</h2>
     <div><Actions onAction={type => alert(type)} /></div>
     <h2>Dialog</h2>
     <div>

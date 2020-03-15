@@ -926,7 +926,7 @@ _reactDom2.default.render(_react2.default.createElement(
   _react2.default.createElement(
     'h2',
     null,
-    '\u64CD\u4F5C'
+    'Actions'
   ),
   _react2.default.createElement(
     'div',

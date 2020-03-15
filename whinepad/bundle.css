@@ -193,6 +193,20 @@ table {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+.Form .FormLabel {
+  color: #A0A0A0;
+  display: block;
+  font-size: 12px;
+  padding: 12px 0 6px;
+}
+
+.Form .FormRow {
+  padding-left: 20px;
+  text-align: left;
+}
+.FormInput {
+  
+}
 .Logo {
   background: purple url('images/whinepad-logo.png');
   background-size: cover;
@@ -200,6 +214,35 @@ table {
   height: 60px;
   vertical-align: middle;
   width: 100px;
+}
+/* thanks to https://css-tricks.com/star-ratings/ */
+.Rating {
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 28px;
+}
+
+.Rating.RatingReadonly{
+  cursor: auto;
+}
+
+.Rating > span {
+  color: grey;
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.Rating .RatingOn:before {
+   color: gold;
+   content: "\2605";
+   left: 0; 
+   padding: 1px;
+   position: absolute;
+}
+.Suggest {
+  
 }
 html {
   background-color: white;
