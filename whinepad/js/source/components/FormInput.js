@@ -1,9 +1,9 @@
 import Rating from './Rating';
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import Suggest from './Suggest';
 
 class FormInput extends Component {
-
+  
   getValue() {
     return 'value' in this.refs.input
       ? this.refs.input.value
@@ -11,18 +11,17 @@ class FormInput extends Component {
   }
 
   render() {
-    const common = { // すべての入力フィールドに共通のプロパティ
+    const common = {
       id: this.props.id,
       ref: 'input',
       defaultValue: this.props.defaultValue,
     };
-
     switch (this.props.type) {
       case 'year':
         return (
           <input
             {...common}
-            type="number"
+            type="number" 
             defaultValue={this.props.defaultValue || new Date().getFullYear()} />
         );
       case 'suggest':
@@ -44,8 +43,8 @@ class FormInput extends Component {
 FormInput.propTypes = {
   type: PropTypes.oneOf(['year', 'suggest', 'rating', 'text', 'input']),
   id: PropTypes.string,
-  options: PropTypes.array, // 入力候補の <option>
-  defaultValue: PropTypes.any
+  options: PropTypes.array,
+  defaultValue: PropTypes.any,
 };
 
 export default FormInput

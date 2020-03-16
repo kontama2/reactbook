@@ -1,8 +1,4 @@
-'use strict';
-
-var _Excel = require('./components/Excel');
-
-var _Excel2 = _interopRequireDefault(_Excel);
+"use strict";
 
 var _Logo = require('./components/Logo');
 
@@ -16,24 +12,35 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Whinepad = require('./components/Whinepad');
+
+var _Whinepad2 = _interopRequireDefault(_Whinepad);
+
+var _schema = require('./schema');
+
+var _schema2 = _interopRequireDefault(_schema);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var headers = localStorage.getItem('headers');
-var data = localStorage.getItem('data');
+var data = JSON.parse(localStorage.getItem('data'));
 
-if (!headers) {
-  headers = ['タイトル', '年', '評価', 'コメント'];
-  data = [['テスト', '2015', '3', 'あああ']];
+// default example data, read from the schema
+if (!data) {
+  data = {};
+  _schema2.default.forEach(function (item) {
+    return data[item.id] = item.sample;
+  });
+  data = [data];
 }
 
 _reactDom2.default.render(_react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(
-    'h1',
-    null,
+    'div',
+    { className: 'app-header' },
     _react2.default.createElement(_Logo2.default, null),
-    ' Whinepad \u306B\u3088\u3046\u3053\u305D\uFF01'
+    ' Welcome to Whinepad!'
   ),
-  _react2.default.createElement(_Excel2.default, { headers: headers, initialData: data })
+  _react2.default.createElement(_Whinepad2.default, { schema: _schema2.default, initialData: data })
 ), document.getElementById('pad'));

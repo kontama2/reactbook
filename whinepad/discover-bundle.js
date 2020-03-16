@@ -73,20 +73,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// function Button(props) {
-//   const cssclasses = classNames('Button', props.className);
-//   return props.href
-//     ? <a {...props} className={cssclasses} />
-//     : <button {...props } className={cssclasses} />
-// }
-
-// const Button = props => {
-//   const cssclasses = classNames('Button', props.className);
-//   return props.href
-//     ? <a {...props} className={cssclasses} />
-//     : <button {...props } className={cssclasses} />
-// }
-
 var Button = function Button(props) {
   return props.href ? _react2.default.createElement('a', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) })) : _react2.default.createElement('button', _extends({}, props, { className: (0, _classnames2.default)('Button', props.className) }));
 };
@@ -96,38 +82,6 @@ Button.propTypes = {
 };
 
 exports.default = Button;
-
-// var propTypes = React.PropTypes;
-
-// var Button = React.createClasses({
-//   propTypes: {
-//     href: PropTypes.string
-//   },
-//   render: function() {
-//     /* 描画 */
-//   },
-// })
-
-// import React, {Component, PropTypes} from 'react';
-
-// class Button extends Components {
-//   render() {
-//     /* 描画 */
-//   }
-// }
-// Button.propTypes = {
-//   href: PropTypes.string,
-// }
-
-// import React, {Component, PropTypes} from 'react';
-
-// const Button = props => {
-//   /* 描画 */
-// };
-
-// Button.propTypes = {
-//   href: PropTypes.string,
-// };
 },{"classnames":10,"react":176}],3:[function(require,module,exports){
 'use strict';
 
@@ -399,12 +353,11 @@ var FormInput = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var common = { // すべての入力フィールドに共通のプロパティ
+      var common = {
         id: this.props.id,
         ref: 'input',
         defaultValue: this.props.defaultValue
       };
-
       switch (this.props.type) {
         case 'year':
           return _react2.default.createElement('input', _extends({}, common, {
@@ -429,7 +382,7 @@ var FormInput = function (_Component) {
 FormInput.propTypes = {
   type: _react.PropTypes.oneOf(['year', 'suggest', 'rating', 'text', 'input']),
   id: _react.PropTypes.string,
-  options: _react.PropTypes.array, // 入力候補の <option>
+  options: _react.PropTypes.array,
   defaultValue: _react.PropTypes.any
 };
 
@@ -633,8 +586,7 @@ var Suggest = function (_Component) {
   _createClass(Suggest, [{
     key: 'getValue',
     value: function getValue() {
-      return this.state.value; // ref はもう必要ありません
-      // return this.refs.lowlevelinput.value;
+      return this.state.value;
     }
   }, {
     key: 'render',
@@ -667,6 +619,8 @@ var Suggest = function (_Component) {
 }(_react.Component);
 
 Suggest.propTypes = {
+  id: _react.PropTypes.string,
+  defaultValue: _react.PropTypes.string,
   options: _react.PropTypes.arrayOf(_react.PropTypes.string)
 };
 

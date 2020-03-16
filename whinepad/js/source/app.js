@@ -1,24 +1,26 @@
-'use strict';
+"use strict";
 
-import Excel from './components/Excel';
 import Logo from './components/Logo';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Whinepad from './components/Whinepad';
+import schema from './schema';
 
-var headers = localStorage.getItem('headers');
-var data = localStorage.getItem('data');
+let data = JSON.parse(localStorage.getItem('data'));
 
-if (!headers) {
-  headers = ['タイトル', '年', '評価', 'コメント'];
-  data = [['テスト', '2015', '3', 'あああ']];
+// default example data, read from the schema
+if (!data) {
+  data = {};
+  schema.forEach((item) => data[item.id] = item.sample);
+  data = [data];
 }
 
 ReactDOM.render(
   <div>
-    <h1>
-      <Logo /> Whinepad にようこそ！
-    </h1>
-    <Excel headers={headers} initialData={data}/>
+    <div className="app-header">
+      <Logo/> Welcome to Whinepad!
+    </div>
+    <Whinepad schema={schema} initialData={data} />
   </div>,
   document.getElementById('pad')
-)
+);

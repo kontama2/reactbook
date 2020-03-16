@@ -1,5 +1,5 @@
 export default {
-  graphs: [
+  grapes: [
     'バコ・ノワール',
     'バルベーラ',
     'カベルネ・フラン',

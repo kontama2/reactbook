@@ -4,9 +4,9 @@ export default [
   {
     id: 'name',
     label: '名前',
-    show: true, // Excel に表示するか否か
+    show: true,
     sample: '2ドルのチャック',
-    align: 'left', // Excel の位置
+    align: 'left',
   },
   {
     id: 'year',
@@ -35,6 +35,6 @@ export default [
     id: 'comments',
     label: 'コメント',
     type: 'text',
-    sample: '値段の割にはよい',
+    sample: 'Nice for the price',
   },
 ]
